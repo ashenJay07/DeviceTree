@@ -1,3 +1,4 @@
+import Image from "next/image";
 import "../styles/navbar.css";
 
 const NavBar = () => {
@@ -9,9 +10,7 @@ const NavBar = () => {
           aria-label="Eleventh navbar example"
         >
           <div className="container-fluid">
-            <a className="navbar-brand" href="#">
-              Navbar
-            </a>
+            <Image src="slt-logo.svg" width={90} height={50} />
             <button
               className="navbar-toggler"
               type="button"
@@ -68,14 +67,6 @@ const NavBar = () => {
                   </ul>
                 </li>
               </ul>
-              <form role="search">
-                <input
-                  className="form-control"
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                />
-              </form>
             </div>
           </div>
         </nav>
