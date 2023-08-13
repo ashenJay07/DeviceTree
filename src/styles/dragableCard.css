@@ -1,0 +1,11 @@
+.draggable-card {
+  padding: 12px;
+  margin: 8px 0;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.dragging {
+  background-color: #e0e0e0;
+}
