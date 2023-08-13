@@ -1,17 +1,30 @@
-// src/firebaseConfig.js
 import { initializeApp } from "firebase/app";
-
+import { getDatabase } from "firebase/database";
+import { getFirestore } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDIT1R1mjv0T3jq-FwIFHn6Bwdt9Dd-O0o",
-    authDomain: "devicetree-e60f9.firebaseapp.com",
-    databaseURL: "https://devicetree-e60f9-default-rtdb.firebaseio.com",
-    projectId: "devicetree-e60f9",
-    storageBucket: "devicetree-e60f9.appspot.com",
-    messagingSenderId: "419553765477",
-    appId: "1:419553765477:web:3870cc4e2e7b4f5d923e8c"
-  };
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+};
 
 const app = initializeApp(firebaseConfig);
 
-export default app;
+const getRealtimeDB = () => {
+  return getDatabase(app);
+};
+
+const getFirestoreDB = () => {
+  return getFirestore(app);
+};
+
+const getFirebaseAuth = () => {
+  return getAuth(app);
+};
+
+export { getRealtimeDB, getFirestoreDB, getFirebaseAuth };
