@@ -1,2 +1,2 @@
-# SLT-DeviceTree
+# DeviceTree
 ### (Device Information Management System)
